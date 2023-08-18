@@ -11,8 +11,8 @@ struct Person {
     int age;
 };
 struct PersonList {
-    Person* ppl;
-    int num_ppl;
+    Person* people;
+    int numPeople;
 };
 
 
