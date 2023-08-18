@@ -12,13 +12,13 @@ int main() {
     PersonList copiedList = deepCopyPersonList(originalList);
     std::cout << "Original List:" << std::endl;
     for (int i = 0; i < n; ++i) {
-        std::cout << "Person " << i+1 << ":" << "Name:" << originalList.ppl[i].name << ", Age:" << originalList.ppl[i].age << std::endl;
+        std::cout << "Person " << i+1 << ":" << "Name:" << originalList.people[i].name << ", Age:" << originalList.ppl[i].age << std::endl;
     }
     std::cout << "CopY List:" << std::endl;
     for (int i = 0; i < n; ++i) {
-        std::cout << "Person " << i+1 << ": " << "Name:" << copiedList.ppl[i].name << ", Age:" << copiedList.ppl[i].age << std::endl;
+        std::cout << "Person " << i+1 << ": " << "Name:" << copiedList.people[i].name << ", Age:" << copiedList.ppl[i].age << std::endl;
     }
-    delete[] originalList.ppl; 
-    delete[] copiedList.ppl;   
+    delete[] originalList.people; 
+    delete[] copiedList.people;   
     return 0;
 }

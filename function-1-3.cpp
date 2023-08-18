@@ -2,12 +2,12 @@
 
 PersonList deepCopyPersonList(PersonList pl) {
     PersonList copy;
-    copy.num_ppl= pl.num_ppl;
-    copy.ppl = new Person[pl.num_ppl]; 
+    copy.numPeople= pl.numPeoplepl;
+    copy.people = new Person[pl.numPeople]; 
 
-    for (int i = 0; i < pl.num_ppl; ++i) {
-        copy.ppl[i].name = pl.ppl[i].name;
-        copy.ppl[i].age = pl.ppl[i].age;
+    for (int i = 0; i < pl.numPeople; ++i) {
+        copy.people[i].name = pl.people[i].name;
+        copy.people[i].age = pl.people[i].age;
     }
 
     return copy;
@@ -17,12 +17,12 @@ PersonList deepCopyPersonList(PersonList pl) {
 
 PersonList createPersonList(int n) {
     PersonList list;
-    list.num_ppl = n;
+    list.numPeople = n;
     list.ppl = new Person[n];
 
     for (int i = 0; i < n; ++i) {
-        list.ppl[i].name = "Jane Doe";
-        list.ppl[i].age = 1;
+        list.people[i].name = "Jane Doe";
+        list.people[i].age = 1;
     }
     return list;
 }

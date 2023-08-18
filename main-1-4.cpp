@@ -16,11 +16,11 @@ int main() {
     PersonList shallowCopiedList = shallowCopyPersonList(originalList);
     std::cout << "original list:" << std::endl;
     for (int i = 0; i < n; ++i) {
-        std::cout << "Person" << i+1 << ":" << "Name:" << originalList.ppl[i].name << ", Age:" << originalList.ppl[i].age << std::endl;
+        std::cout << "Person" << i+1 << ":" << "Name:" << originalList.people[i].name << ", Age:" << originalList.people[i].age << std::endl;
     }
     std::cout << "Shallow Copied List:" << std::endl;
     for (int i = 0; i < n; ++i) {
-        std::cout << "Person" << i+1 << ":" << "Name:" << shallowCopiedList.ppl[i].name << ", Age:" << shallowCopiedList.ppl[i].age << std::endl;
+        std::cout << "Person" << i+1 << ":" << "Name:" << shallowCopiedList.people[i].name << ", Age:" << shallowCopiedList.people[i].age << std::endl;
     }
     return 0;
 }
