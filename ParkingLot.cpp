@@ -22,7 +22,7 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
     vehicles.push_back(vehicle);
     current_vehicle_count++;
   } else {
-    std::cout << "The lot is packed" << std::endl;
+    std::cout << "The lot is full" << std::endl;
   }
 }
 
@@ -36,7 +36,7 @@ void ParkingLot::unparkVehicle(int id) {
     }
   }
 
-  std::cout << "Vehicle not in lot" << std::endl;
+  std::cout << "Vehicle not in the lot" << std::endl;
 }
 
 int ParkingLot::countOverstayingVehicles(int maximum_parking_duration) const {
