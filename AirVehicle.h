@@ -8,7 +8,7 @@ public:
 
 
     int get_weight() const;
-    void set_weight(int w);
+    void get_weight(int w);
 
 
     float get_fuel() const;

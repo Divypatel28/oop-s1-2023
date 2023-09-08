@@ -16,7 +16,7 @@ AirVehicle::AirVehicle(int w) {
 int AirVehicle::get_weight() const {
     return weight;
 }
-void AirVehicle::set_weight(int w) {
+void AirVehicle::get_weight(int w) {
     weight = w;
 }
 float AirVehicle::get_fuel() const {

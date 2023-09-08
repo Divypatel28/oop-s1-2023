@@ -2,26 +2,25 @@
 #include "AirVehicle.h"
 
 int main() {
-    // Create an AirVehicle object with default constructor
-    AirVehicle vehicle1;
+    
+    AirVehicle plane1;
 
-    // Create another AirVehicle object with a specified weight
-    AirVehicle vehicle2(500);
 
-    // Access and set attributes using getter and setter methods
-    vehicle1.set_weight(300);
-    std::cout << "The weight of Vehicle 1 is " << vehicle1.get_weight() << " Kg" << std::endl;
+    AirVehicle plane2(500);
 
-    // Get initial fuel level
-    std::cout << "The fuel initally present in Vehicle 2 is " << vehicle2.get_fuel() << "%" << std::endl;
 
-    // Refuel vehicle2
-    vehicle2.refuel();
-    std::cout << "Vehicle 2 is now refueled to the new refuel level: " << vehicle2.get_fuel() << "%" << std::endl;
+    plane1.get_weight(300);
+    std::cout << "The weight of Vehicle 1 is " << plane1.get_weight() << " Kg" << std::endl;
 
-    // Simulate a flight for vehicle1
-    vehicle1.fly(20, 60);
-    std::cout << "The number of flights for vehicle 1 " << vehicle1.get_numberOfFlights() << std::endl;
+
+    std::cout << "The fuel initally present in Vehicle 2 is " << plane2.get_fuel() << "%" << std::endl;
+
+    plane2.refuel();
+    std::cout << "Vehicle 2 is now refueled to the new refuel level: " << plane2.get_fuel() << "%" << std::endl;
+
+
+    plane1.fly(20, 60);
+    std::cout << "The number of flights for vehicle 1 " << plane1.get_numberOfFlights() << std::endl;
 
     return 0;
 }
