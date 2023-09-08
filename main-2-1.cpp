@@ -1,22 +1,26 @@
 #include <iostream>
-#include "Helicopter.cpp"
+#include "Helicopter.h"
 
 int main() {
-    Helicopter heli;
-    Helicopter heli2(15);
-    Helicopter heli3(25);
-    Helicopter heli4(30);
-    std::cout << "The fuel is " << heli.getFuelPercentage() << "%" << std::endl;
-    std::cout << "The Fuel after 45 minute of the flight with no wind: " << heli.getFuelPercentage() << "%" << std::endl;
+  Helicopter myHelicopter(4000, "Chopper A");
 
-    std::cout << "The fuel is " << heli2.getFuelPercentage() << "%" << std::endl;
-    std::cout << "The fuel after 45 minute of the flight with no wind: " << heli2.getFuelPercentage() << "%" << std::endl;
+  std::cout << "The name of helicopter is " << myHelicopter.get_name() << std::endl;
+  std::cout << "The weight ist: " << myHelicopter.get_weight() << " kg" << std::endl;
+  std::cout << "The fuel is: " << myHelicopter.get_fuel() << "%" << std::endl;
+  std::cout << "number of flights is: " << myHelicopter.get_numberOfFlights() << std::endl;
 
-    heli3.setFuelPercentage(20);
-    std::cout << "The Fuel is " << heli3.getFuelPercentage() << "%" << std::endl;
 
-    heli4.refuel();
-    std::cout << "The new fuel level after a refuel is " << heli4.getFuelPercentage() << "%" << std::endl;
+  myHelicopter.fly(20, 30); // Flying plane for 30 minutes with a headwind 20 km/h
 
-    return 0;
+  std::cout << "The new uppdated weight is" << myHelicopter.get_weight() << " kg" << std::endl;
+  std::cout << "Th new updated fuel is " << myHelicopter.get_fuel() << "%" << std::endl;
+  std::cout << "The new updated number of flights " << myHelicopter.get_numberOfFlights() << std::endl;
+
+  myHelicopter.refuel();
+
+  std::cout << "The weight after refuel is: " << myHelicopter.get_weight() << " kg" << std::endl;
+  std::cout << "Fuel level after refuel: " << myHelicopter.get_fuel() << "%" << std::endl;
+  std::cout << "The number of flights after refuel: " << myHelicopter.get_numberOfFlights() << std::endl;
+
+  return 0;
 }

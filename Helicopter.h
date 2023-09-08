@@ -1,20 +1,23 @@
 #ifndef HELICOPTER_H
 #define HELICOPTER_H
 
-#include "AirVehicle.h"
 #include <string>
+#include "AirVehicle.h"
 
 class Helicopter : public AirVehicle {
-public:
-    Helicopter();
-    Helicopter(int w, const std::string& n);
+ private:
+  std::string name;
 
-    const std::string& get_name() const;
-    void set_name(const std::string& n);
-    void fly(int headwind, int minutes);
+ public:
+  Helicopter();
 
-private:
-    std::string name;
+  Helicopter(int w, std::string n);
+
+
+  std::string get_name() const;
+
+
+  void fly(int headwind, int minutes);
 };
 
 #endif

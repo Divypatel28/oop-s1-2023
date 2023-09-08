@@ -4,11 +4,14 @@
 #include "AirVehicle.h"
 
 class AirFleet {
+
 public:
     AirFleet();
+
     AirVehicle** get_fleet();
 
 private:
+
     AirVehicle* fleet[5];
 };
 

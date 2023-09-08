@@ -2,41 +2,51 @@
 
 Airplane::Airplane() : numPassengers(0) {}
 
-Airplane::Airplane(int w, int p) : numPassengers(p) {
-    if (numPassengers < 0) {
-        numPassengers = 0;
-    }
-}
+Airplane::Airplane(int w, int p) : numPassengers(p) { set_weight(w); }
 
-int Airplane::get_numPassengers() const {
-    return numPassengers;
-}
+
+int Airplane::get_numPassengers() const { return numPassengers; }
+
+
 
 void Airplane::reducePassengers(int x) {
-    if (x < 0) {
-        x = 0;
-    }
+  if (x >= 0) {
 
     if (numPassengers >= x) {
-        numPassengers -= x;
+      numPassengers -= x;
+
     } else {
-        numPassengers = 0;
+      numPassengers = 0;
     }
+  }
 }
 
+
 void Airplane::fly(int headwind, int minutes) {
-    float fuelConsumptionRate = 0.0025f;
 
-    if (headwind >= 60) {
-        fuelConsumptionRate = 0.005f;
+
+  double rateOfFuelConsumption = 0.25;
+
+
+  if (headwind >= 60) {
+    rateOfFuelConsumption = 0.50;
+  }
+
+
+  int extraPassengerFuel = 0.1 * numPassengers * minutes;
+
+  double consumptionFuel = (rateOfFuelConsumption + extraPassengerFuel) * minutes;
+
+
+  if (get_fuel() >= 20) {
+
+    if (get_fuel() - consumptionFuel < 20) {
+      set_fuel(20);
+      
+    } else {
+      set_fuel(get_fuel() - consumptionFuel);
     }
 
-    float extraFuelConsumption = 0.00001f * numPassengers * minutes;
-
-    float newFuelPercentage = get_fuelPercentage() - (fuelConsumptionRate + extraFuelConsumption) * minutes;
-
-    if (newFuelPercentage >= 0.2f) {
-        set_fuelPercentage(newFuelPercentage);
-        incrementNumberOfFlights();
-    }
+    set_numberOfFlights(get_numberOfFlights() + 1);
+  }
 }

@@ -3,14 +3,26 @@
 
 #include "AirVehicle.h"
 
-class Airplane : public AirVehicle {
-public:
-    Airplane();
-    Airplane(int w, int p);
 
-    int get_numPassengers() const;
-    void reducePassengers(int x);
-    void fly(int headwind, int minutes);
+class Airplane : public AirVehicle {
+
+ private:
+
+  int numPassengers;
+
+ public:
+
+  Airplane();
+
+  Airplane(int w, int p);
+
+
+  int get_numPassengers() const;
+
+
+  void reducePassengers(int x);
+
+  void fly(int headwind, int minutes);
 };
 
 #endif

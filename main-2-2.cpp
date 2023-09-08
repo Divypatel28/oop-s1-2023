@@ -1,20 +1,33 @@
 #include <iostream>
-#include "Airplane.cpp"
+
+#include "Airplane.h"
 
 int main() {
-    Airplane airplane;
-    Airplane airplane2(10, 20);
+  Airplane myAirplane(5000, 100);
 
-    std::cout << "The fuel Percentage of Airplane is: " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
-    std::cout << "The number of Flights of Airplane is: " << airplane.getNumberOfFlights() << std::endl;
+  std::cout << "The starting weight is: " << myAirplane.get_weight() << " kg"<< std::endl;
+  std::cout << "The starting fuel is: " << myAirplane.get_fuel() << "%" << std::endl;
+  std::cout << "The starting no. of flights: " << myAirplane.get_numberOfFlights()<< std::endl;
+  std::cout << "The starting no. of passengers: "<< myAirplane.get_numPassengers() << std::endl;
 
-    airplane.fly(45, 0);
-    std::cout << "The fuel percentage after 45 minute flight in the aircraft is " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
+  // Fly the airplane for 30 minutes with a headwind of 40 km/h
+  myAirplane.fly(40, 30);
 
-    airplane.fly(30, 20);
-    std::cout << "The fuel percentage after 30 minute flight with 20 wind is " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
-    
+  std::cout << "New the Updated Weight: " << myAirplane.get_weight() << " kg"<< std::endl;
+  std::cout << "New the Updated Fuel: " << myAirplane.get_fuel() << "%" << std::endl;
+  std::cout << "The new Updated number of flights is: " << myAirplane.get_numberOfFlights() << std::endl;
+  std::cout << "New updated number of passengers id: "<< myAirplane.get_numPassengers() << std::endl;
 
-    return 0;
+
+  myAirplane.reducePassengers(20);
+
+  std::cout << "The number of passengers after : "<< myAirplane.get_numPassengers() << std::endl;
+
+  myAirplane.refuel();
+
+  std::cout << "The weight after refuelling is: " << myAirplane.get_weight() << " kg"<< std::endl;
+  std::cout << "Fuel level after refueling " << myAirplane.get_fuel() << "%"<< std::endl;
+  std::cout << "The amount of flights after refuel are: " << myAirplane.get_numberOfFlights() << std::endl;
+
+  return 0;
 }
-

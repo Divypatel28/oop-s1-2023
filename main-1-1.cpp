@@ -2,25 +2,24 @@
 #include "AirVehicle.h"
 
 int main() {
-    
-    AirVehicle plane1;
 
+  AirVehicle myAirVehicle(250);
 
-    AirVehicle plane2(500);
+  std::cout << "The weight is " << myAirVehicle.get_weight() << " kg" << std::endl;
+  std::cout << "The fuel wass: " << myAirVehicle.get_fuel() << "%" << std::endl;
+  std::cout << "number of flights: " << myAirVehicle.get_numberOfFlights() << std::endl;
 
+  myAirVehicle.fly(20, 30);  // Flying plane for 30 minutes with a headwind 20 km/h
 
-    plane1.get_weight(300);
-    std::cout << "The weight of Vehicle 1 is " << plane1.get_weight() << " Kg" << std::endl;
+  std::cout << "The New updated Weight is " << myAirVehicle.get_weight() << " kg" << std::endl;
+  std::cout << "The New the updated Fuel is " << myAirVehicle.get_fuel() << "%" << std::endl;
+  std::cout << "The New the updated Number of Flights is "<< myAirVehicle.get_numberOfFlights() << std::endl;
 
+  myAirVehicle.refuel();
 
-    std::cout << "The fuel initally present in Vehicle 2 is " << plane2.get_fuel() << "%" << std::endl;
+  std::cout << "The weight After refuel is: " << myAirVehicle.get_weight() << " kg" << std::endl;
+  std::cout << "The fuel level After refuel is: " << myAirVehicle.get_fuel() << "%" << std::endl;
+  std::cout << "The nunmber of flights after refuel was: " << myAirVehicle.get_numberOfFlights() << std::endl;
 
-    plane2.refuel();
-    std::cout << "Vehicle 2 is now refueled to the new refuel level: " << plane2.get_fuel() << "%" << std::endl;
-
-
-    plane1.fly(20, 60);
-    std::cout << "The number of flights for vehicle 1 " << plane1.get_numberOfFlights() << std::endl;
-
-    return 0;
+  return 0;
 }
