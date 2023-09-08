@@ -1,18 +1,22 @@
 #include <iostream>
-#include "Helicopter.h"
+#include "Helicopter.cpp"
 
 int main() {
-    Helicopter helicopter(5690, "Sample Helicopter");
+    Helicopter heli;
+    Helicopter heli2(15);
+    Helicopter heli3(25);
+    Helicopter heli4(30);
+    std::cout << "The fuel is " << heli.getFuelPercentage() << "%" << std::endl;
+    std::cout << "The Fuel after 45 minute of the flight with no wind: " << heli.getFuelPercentage() << "%" << std::endl;
 
-    int headwind = 45;
-    int flightMinutes = 10;
+    std::cout << "The fuel is " << heli2.getFuelPercentage() << "%" << std::endl;
+    std::cout << "The fuel after 45 minute of the flight with no wind: " << heli2.getFuelPercentage() << "%" << std::endl;
 
-    helicopter.fly(headwind, flightMinutes);
+    heli3.setFuelPercentage(20);
+    std::cout << "The Fuel is " << heli3.getFuelPercentage() << "%" << std::endl;
 
-    std::cout << "The name of the Helicopter is " << helicopter.get_name() << std::endl;
-    std::cout << "The weight is: " << helicopter.get_weight() << " kg" << std::endl;
-    std::cout << "The fuel Percentage is " << helicopter.get_fuelPercentage() * 100 << "%" << std::endl;
-    std::cout << "The number of flights is: " << helicopter.get_numberOfFlights() << std::endl;
+    heli4.refuel();
+    std::cout << "The new fuel level after a refuel is " << heli4.getFuelPercentage() << "%" << std::endl;
 
     return 0;
 }

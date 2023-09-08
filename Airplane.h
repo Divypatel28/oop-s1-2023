@@ -11,9 +11,6 @@ public:
     int get_numPassengers() const;
     void reducePassengers(int x);
     void fly(int headwind, int minutes);
-
-private:
-    int numPassengers;
 };
 
 #endif

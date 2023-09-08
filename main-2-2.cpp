@@ -1,21 +1,20 @@
 #include <iostream>
-#include "Airplane.h"
+#include "Airplane.cpp"
 
 int main() {
-    Airplane airplane(10000, 150); // Example: 10,000 kg, 150 passengers
+    Airplane airplane;
+    Airplane airplane2(10, 20);
 
-    int headwind = 65;
-    int flightMinutes = 120;
+    std::cout << "The fuel Percentage of Airplane is: " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
+    std::cout << "The number of Flights of Airplane is: " << airplane.getNumberOfFlights() << std::endl;
 
+    airplane.fly(45, 0);
+    std::cout << "The fuel percentage after 45 minute flight in the aircraft is " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
 
-    airplane.fly(headwind, flightMinutes);
-
-
-    std::cout << "The weight of the Airplane is: " << airplane.get_weight() << " kg" << std::endl;
-    std::cout << "The Number of Passengers aboard are: " << airplane.get_numPassengers() << std::endl;
-    std::cout << "The Fuel Percentage of Airplane is: " << airplane.get_fuelPercentage() * 100 << "%" << std::endl;
-    std::cout << "The number of flights: " << airplane.get_numberOfFlights() << std::endl;
-
+    airplane.fly(30, 20);
+    std::cout << "The fuel percentage after 30 minute flight with 20 wind is " << airplane.getFuelPercentage() * 100 << "%" << std::endl;
+    
 
     return 0;
 }
+

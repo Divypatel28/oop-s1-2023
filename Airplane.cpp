@@ -1,17 +1,11 @@
 #include "Airplane.h"
 
-Airplane::Airplane() : numPassengers(0) {
-    setFuelPercentage(1.0f);
-    setNumberOfFlights(0);
-}
+Airplane::Airplane() : numPassengers(0) {}
 
 Airplane::Airplane(int w, int p) : numPassengers(p) {
     if (numPassengers < 0) {
         numPassengers = 0;
     }
-
-    setFuelPercentage(1.0f);
-    setNumberOfFlights(0);
 }
 
 int Airplane::get_numPassengers() const {
@@ -37,17 +31,12 @@ void Airplane::fly(int headwind, int minutes) {
         fuelConsumptionRate = 0.005f;
     }
 
-
-
     float extraFuelConsumption = 0.00001f * numPassengers * minutes;
 
-
-
-    float newFuelPercentage = getFuelPercentage() - (fuelConsumptionRate + extraFuelConsumption) * minutes;
-
+    float newFuelPercentage = get_fuelPercentage() - (fuelConsumptionRate + extraFuelConsumption) * minutes;
 
     if (newFuelPercentage >= 0.2f) {
-        setFuelPercentage(newFuelPercentage);
-        setNumberOfFlights (getNumberOfFlights() + 1);
+        set_fuelPercentage(newFuelPercentage);
+        incrementNumberOfFlights();
     }
 }
