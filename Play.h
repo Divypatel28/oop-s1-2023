@@ -49,7 +49,7 @@ public:
                     persona->shift(1, 0);
 
                     if (std::get<0>(persona->getLoc()) > static_cast<int>(matrix.size())) {
-                        std::cout << "Victory!! This Persona has just won the game!!" << std::endl;
+                        std::cout << "Persona has won the game!" << std::endl;
                         return;
                     }
                 }
@@ -58,7 +58,7 @@ public:
             cycles++;
         }
 
-        std::cout << " GAME OVER!!! Nice Try! But the limit of cycles has been reached!" << std::endl;
+        std::cout << " Maximum number of cycles reached. Game over. " << std::endl;
     }
 };
 
