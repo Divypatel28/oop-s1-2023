@@ -7,7 +7,7 @@ class Persona : public Spot {
 public:
     Persona(int x, int y) : Spot(x, y, 'P') {}
 
-    void change(int dx, int dy) {
+    void shift(int dx, int dy) {
 
         std::tuple<int, int> loc = getLoc();
 

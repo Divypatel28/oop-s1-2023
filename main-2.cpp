@@ -25,7 +25,7 @@ int main() {
     std::cout << "The persona's Category is " << persona.getCategory() << std::endl;
     std::cout << "Is the snare operative/functional " << (snare.isOperative() ? "yes" : "no") << std::endl;
 
-    persona.change(1, 1);
+    persona.shift(1, 1);
 
     std::cout << "\nThe persona after it has been Changed or shifted: " << std::endl;
     std::cout << "The persona's lcation is: (" << std::get<0>(persona.getLoc()) << "," << std::get<1>(persona.getLoc()) << ")" << std::endl;
