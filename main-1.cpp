@@ -4,7 +4,7 @@
 // main-1.cpp
 
 int main() {
-    Spot spot(1, 2, 'A');
+    Spot spot(7, 8, 'B');
     std::cout << "Initiated the location: (" << std::get<0>(spot.getLoc()) << "," << std::get<1>(spot.getLoc()) << ")" << std::endl;
 
     std::cout << "Initiated the category: " << spot.getCategory() << std::endl;
