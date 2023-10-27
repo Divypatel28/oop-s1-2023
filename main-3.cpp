@@ -3,9 +3,9 @@
 int main() {
     Play game;
 
-    game.playCycle(15, 2.0);  
+    game.playCycle(35, 4.0);  
     
-    game.initPlay(1, 2, 10, 10);
+    game.initPlay(2, 4, 20, 20); //20x20 matrix
 
     return 0;
 }
